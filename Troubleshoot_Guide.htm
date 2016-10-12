@@ -1,0 +1,212 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html id="Troubleshoot_guide.htm_64">
+	<head id="Troubleshoot_guide.htm_73">
+		<title id="Troubleshoot_guide.htm_83">Troubleshooting Guide</title>
+	</head>
+	<body id="Troubleshoot_guide.htm_144">
+		<div id="Troubleshoot_guide.htm_154">
+			<SPAN style="FONT-SIZE: 9pt; COLOR: black; FONT-FAMILY: 'Trebuchet MS'; mso-bidi-font-family: Arial; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" id="Troubleshoot_guide.htm_164">
+				<h2 id="Troubleshoot_guide.htm_396"><u id="Troubleshoot_guide.htm_400"> Troubleshooting Steps for Download errors</u></h2>
+				<UL id="Troubleshoot_guide.htm_460">
+					&nbsp;<OL id="Troubleshoot_guide.htm_477">
+						<b id="Troubleshoot_guide.htm_489"><li id="Troubleshoot_guide.htm_492"></b><h4 id="Troubleshoot_guide.htm_500">Background Intelligent Transfer Service 
+						(BITS) Disabled</h4>
+						<TABLE id="Table1" style="WIDTH: 752px; HEIGHT: 56px" cellSpacing="1" cellPadding="1" width="752"
+							border="1">
+							<TR id="Troubleshoot_guide.htm_706">
+								<td valign="top" id="Troubleshoot_guide.htm_720">
+									<a id="-2147023838"></a><a id="-2147023821"></a><a id="-2147023828"></a><a id="-2147023836">
+									</a><a id="-2147023813"></a><a id="-2147023174"></a>
+									<P id="Troubleshoot_guide.htm_914"><b id="Troubleshoot_guide.htm_917">Description:</b><br id="Troubleshoot_guide.htm_936">
+										This error occurs when the BITS service is disabled, does not exist, has been 
+										deleted from the services application, was stopped while download was in 
+										progress, or if any service that BITS depends on failed or was deleted. 
+									The error message for this problem is &quot;BITS 
+									service must be enabled before you start the 
+									installation process. Enable the BITS 
+									service and run setup again.&quot;</P>
+									<P id="Troubleshoot_guide.htm_1424"><B id="Troubleshoot_guide.htm_1427">To fix this error:</B><br id="Troubleshoot_guide.htm_1452">
+										1. On the <STRONG id="Troubleshoot_guide.htm_1478">Start </STRONG>menu, click <STRONG id="Troubleshoot_guide.htm_1513">Run</STRONG>.</P>
+									<P id="Troubleshoot_guide.htm_1549">2. In the Run Dialog box, type <FONT face="Courier" color="navy" id="Troubleshoot_guide.htm_1583">services.msc</FONT>
+										and then click <STRONG id="Troubleshoot_guide.htm_1663">OK</STRONG>.</P>
+									<P id="Troubleshoot_guide.htm_1698">3. In the list of services, right-click <STRONG id="Troubleshoot_guide.htm_1741">Background Intelligent Transfer 
+											Service</STRONG>, and then click <STRONG id="Troubleshoot_guide.htm_1827">Properties</STRONG>.</P>
+									<P id="Troubleshoot_guide.htm_1870"><STRONG id="Troubleshoot_guide.htm_1873">Note: </STRONG>If you do not see <STRONG id="Troubleshoot_guide.htm_1914">Background Intelligent Transfer 
+											Service</STRONG> in the list, the service is not installed on your 
+										computer. You can download and install BITS from <A href="http://www.microsoft.com/downloads/details.aspx?FamilyId=B93356B1-BA43-480F-983D-EB19368F9047&amp;displaylang=en" id="Troubleshoot_guide.htm_2095">
+											http://www.microsoft.com/downloads/details.aspx?FamilyId=B93356B1-BA43-480F-983D-EB19368F9047&amp;displaylang=en</A></P>
+									<P id="Troubleshoot_guide.htm_2362">4. In the <STRONG id="Troubleshoot_guide.htm_2375">Startup type </STRONG>list, select <STRONG id="Troubleshoot_guide.htm_2418">Manual </STRONG>and 
+										then click <STRONG id="Troubleshoot_guide.htm_2469">OK</STRONG>.</P>
+									<P id="Troubleshoot_guide.htm_2504">
+										If these steps do not resolve the problem, you may need to enable the services 
+										that BITS depends on.</P>
+									<P id="Troubleshoot_guide.htm_2646"><STRONG id="Troubleshoot_guide.htm_2649">To enable dependencies:</STRONG></P>
+									<P id="Troubleshoot_guide.htm_2704">1. Follow steps 1-3 listed above.</P>
+									<P id="Troubleshoot_guide.htm_2755">
+										2. In the <STRONG id="Troubleshoot_guide.htm_2780">Background Intelligent Transfer Service</STRONG> <STRONG id="Troubleshoot_guide.htm_2837">Properties
+										</STRONG>dialog box, click the <STRONG id="Troubleshoot_guide.htm_2898">Dependencies </STRONG>tab.</P>
+									<P id="Troubleshoot_guide.htm_2947">3. For each service listed under <STRONG id="Troubleshoot_guide.htm_2983">This service depends on the following 
+											system components</STRONG>, follow steps 3 &amp;&nbsp;4 listed above to 
+										enable the service.</P>
+								</td>
+							</TR>
+						</TABLE>
+						&nbsp;<p id="Troubleshoot_guide.htm_3208">&nbsp;<b id="Troubleshoot_guide.htm_3217"><li id="Troubleshoot_guide.htm_3220"></b><h4 id="Troubleshoot_guide.htm_3228">Configuration Errors</h4>
+						<TABLE id="Table5" style="WIDTH: 752px; HEIGHT: 56px" cellSpacing="1" cellPadding="1" width="752"
+							border="1">
+							<TR id="Troubleshoot_guide.htm_3391">
+								<td valign="top" id="Troubleshoot_guide.htm_3405">
+									<a id="-2147221163"></a><a id="-2147221164"></a>
+									<P id="Troubleshoot_guide.htm_3492"><b id="Troubleshoot_guide.htm_3495">Description:</b><br id="Troubleshoot_guide.htm_3514">
+										This error occurs when BITS interfaces are not registered or the registry 
+										settings are corrupted.</P>
+									<P id="Troubleshoot_guide.htm_3654"><b id="Troubleshoot_guide.htm_3657">To fix this error:</b>
+										<br id="Troubleshoot_guide.htm_3694">
+										Upgrade to BITS 2.0 from <A href="http://www.microsoft.com/downloads/details.aspx?FamilyId=B93356B1-BA43-480F-983D-EB19368F9047&amp;displaylang=en" id="Troubleshoot_guide.htm_3735">
+											http://www.microsoft.com/downloads/details.aspx?FamilyId=B93356B1-BA43-480F-983D-EB19368F9047&amp;displaylang=en</A></P>
+									<P id="Troubleshoot_guide.htm_4002">OR</P>
+									<P id="Troubleshoot_guide.htm_4022">
+										Repair the BITS service by running the bitsadmin tool from the command prompt:<br id="Troubleshoot_guide.htm_4115">
+										Bitsadmin /util /repairservice /force</P>
+									<p id="Troubleshoot_guide.htm_4183">You can download the Bitsadmin tool from: <A href="http://www.microsoft.com/downloads/details.aspx?amp;displaylang=en&amp;familyid=49AE8576-9BB9-4126-9761-BA8011FABF38&amp;displaylang=en" id="Troubleshoot_guide.htm_4228">
+											http://www.microsoft.com/downloads/details.aspx?amp;displaylang=en&amp;familyid=49AE8576-9BB9-4126-9761-BA8011FABF38&amp;displaylang=en</A>.</p>
+								</td>
+							</TR>
+						</TABLE>
+						&nbsp;<p id="Troubleshoot_guide.htm_4590">&nbsp;<b id="Troubleshoot_guide.htm_4599"><li id="Troubleshoot_guide.htm_4602"></b><h4 id="Troubleshoot_guide.htm_4610">Network Errors</h4>
+						<TABLE id="Table4" style="WIDTH: 752px; HEIGHT: 56px" cellSpacing="1" cellPadding="1" width="752"
+							border="1">
+							<TR id="Troubleshoot_guide.htm_4767">
+								<td valign="top" id="Troubleshoot_guide.htm_4781">
+									<a id="-2145844845"></a><a id="-2145844840"></a><a id="-2145844848"></a><a id="-2145844832">
+									</a><a id="-2145844843"></a><a id="-2145844837"></a><a id="-2145844844"></a><a id="-2145844745">
+									</a><a id="-2145844744"></a><a id="-2145844748"></a><a id="-2145844746"></a><a id="-2147012889">
+									</a><a id="-2145386480"></a><a id="-2145386477"></a><a id="-2145386469"></a><a id="-2145386479">
+									</a><a id="-2145386450"></a><a id="-2147012894"></a><a id="-2147012744"></a><a id="-2147012867">
+									</a><a id="-2147012866"></a><a id="-2147023665"></a><a id="-2147012892"></a><a id="-2147012879">
+									</a>
+									<p id="Troubleshoot_guide.htm_5462"><b id="Troubleshoot_guide.htm_5465">Description:</b><br id="Troubleshoot_guide.htm_5484">
+										These errors can occur for one or more of the following reasons:
+										<ul id="Troubleshoot_guide.htm_5576">
+											<li id="Troubleshoot_guide.htm_5593">
+											Unable to reach download server.
+											<li id="Troubleshoot_guide.htm_5655">
+											URL not found on the server.
+											<li id="Troubleshoot_guide.htm_5713">
+											Server is overloaded.
+											<li id="Troubleshoot_guide.htm_5764">
+											Bad Gateway or Proxy.
+											<li id="Troubleshoot_guide.htm_5815">
+											Network is disconnected.
+											<LI id="Troubleshoot_guide.htm_5869">
+												Proxy does not support HTTP 1.1.</LI>
+										</ul>
+									<P id="Troubleshoot_guide.htm_5952"></P>
+									<P id="Troubleshoot_guide.htm_5970">
+										<b id="Troubleshoot_guide.htm_5985">To correct these errors, try the following:</b>
+										<br id="Troubleshoot_guide.htm_6047">
+										Provide correct settings for the proxy server and ensure that your machine is 
+										able to correctly resolve the proxy server.
+									</P>
+									<P id="Troubleshoot_guide.htm_6222">OR</P>
+									<P id="Troubleshoot_guide.htm_6242">
+										Upgrade to BITS 2.0. You can download BITS 2.0 from
+										<br id="Troubleshoot_guide.htm_6320">
+										<A href="http://www.microsoft.com/downloads/details.aspx?amp;displaylang=en&amp;familyid=49AE8576-9BB9-4126-9761-BA8011FABF38&amp;displaylang=en" id="Troubleshoot_guide.htm_6336">
+											http://www.microsoft.com/downloads/details.aspx?amp;displaylang=en&amp;familyid=49AE8576-9BB9-4126-9761-BA8011FABF38&amp;displaylang=en</A>
+										.
+										</P>
+									<P id="Troubleshoot_guide.htm_6674">
+										&nbsp;</P>
+									<P id="Troubleshoot_guide.htm_6710">
+										<STRONG id="Troubleshoot_guide.htm_6725">Note</STRONG>: For these errors: exit setup, verify that you are 
+										connected to network, and launch setup again.
+									</P>
+								</td>
+							</TR>
+						</TABLE>
+						&nbsp;<p id="Troubleshoot_guide.htm_6929">&nbsp;<b id="Troubleshoot_guide.htm_6938"><li id="Troubleshoot_guide.htm_6941"></b><h4 id="Troubleshoot_guide.htm_6949">Disk Errors</h4>
+						<TABLE id="Table2" style="WIDTH: 752px; HEIGHT: 56px" cellSpacing="1" cellPadding="1" width="752"
+							border="1">
+							<TR id="Troubleshoot_guide.htm_7103">
+								<td valign="top" id="Troubleshoot_guide.htm_7117">
+									<a id="-2147024864"></a><a id="-2147024784"></a><a id="-2145386483"></a>
+									<p id="Troubleshoot_guide.htm_7228"><b id="Troubleshoot_guide.htm_7231">Description:</b><br id="Troubleshoot_guide.htm_7250">
+										This error occurs when the BITS service failed to create or write to a file. 
+										Another program, such as chkdsk.exe, might be running which locked the disk and 
+										prevented BITS from writing to the file.</p>
+									<P id="Troubleshoot_guide.htm_7502">
+										<b id="Troubleshoot_guide.htm_7517">To correct this error:</b>
+										<br id="Troubleshoot_guide.htm_7558">
+										Make sure that no other program (e.g. chkdsk.exe) which could lock the disk is 
+										running and retry the download.</P>
+									<P id="Troubleshoot_guide.htm_7711">OR</P>
+									<P id="Troubleshoot_guide.htm_7731">
+										Restart your computer and then launch setup again. Make sure that you are 
+										connected to internet.
+									</P>
+								</td>
+							</TR>
+						</TABLE>
+						&nbsp;<p id="Troubleshoot_guide.htm_7928">&nbsp;<b id="Troubleshoot_guide.htm_7937"><li id="Troubleshoot_guide.htm_7940"></b><h4 id="Troubleshoot_guide.htm_7948">Proxy Errors</h4>
+						<TABLE id="Table3" style="WIDTH: 752px; HEIGHT: 56px" cellSpacing="1" cellPadding="1" width="752"
+							border="1">
+							<TR id="Troubleshoot_guide.htm_8103">
+								<td valign="top" id="Troubleshoot_guide.htm_8117">
+									<a id="-2145844841"></a><a id="-2145844847"></a><a id="-2147013892"></a><a id="-2145386433">
+									</a><a id="-2147013895"></a>
+									<p id="Troubleshoot_guide.htm_8287"><b id="Troubleshoot_guide.htm_8290">Description:</b><br id="Troubleshoot_guide.htm_8309">
+										The BITS service failed because of one of the following proxy related errors:
+										<UL id="Troubleshoot_guide.htm_8414">
+											<li id="Troubleshoot_guide.htm_8431">
+											The Proxy settings are not valid.
+											<li id="Troubleshoot_guide.htm_8494">
+											The proxy server requires authentication.
+											<li id="Troubleshoot_guide.htm_8565">
+												The computer is not able to resolve the proxy server.</li></UL>
+									<P id="Troubleshoot_guide.htm_8657">
+										<b id="Troubleshoot_guide.htm_8672">To correct these errors, try the following:</b>
+										<br id="Troubleshoot_guide.htm_8734">
+										Provide correct credentials for the proxy server authentication and restart 
+										setup again.</P>
+									<P id="Troubleshoot_guide.htm_8865">OR</P>
+									<P id="Troubleshoot_guide.htm_8885">Upgrade the proxy server to support HTTP1.1 including ensure that the proxy 
+										supports implicit credentials (like NTLM). You may need to contact your network 
+										administrator.</P>
+									<P id="Troubleshoot_guide.htm_9097">OR</P>
+									<P id="Troubleshoot_guide.htm_9117">Bypass the proxy by changing your Internet Explorer proxy settings.</P>
+									<P id="Troubleshoot_guide.htm_9202"><STRONG id="Troubleshoot_guide.htm_9205">To bypass a proxy server:</STRONG></P>
+									<P id="Troubleshoot_guide.htm_9262">1. In <STRONG id="Troubleshoot_guide.htm_9271">Internet Explorer</STRONG>, click <STRONG id="Troubleshoot_guide.htm_9313">Tools </STRONG>and then 
+										click <STRONG id="Troubleshoot_guide.htm_9363">Internet Options</STRONG>.</P>
+									<P id="Troubleshoot_guide.htm_9412">2. Click the <STRONG id="Troubleshoot_guide.htm_9428">Connections </STRONG>tab and then click <STRONG id="Troubleshoot_guide.htm_9476">LAN Settings</STRONG>.</P>
+									<P id="Troubleshoot_guide.htm_9521">3. Under <STRONG id="Troubleshoot_guide.htm_9533">Proxy server</STRONG>, unselect <STRONG id="Troubleshoot_guide.htm_9573">Use a proxy server for your 
+											LAN (These settings will not apply to dial-up or VPN connections.)</STRONG> 
+										and then click <STRONG id="Troubleshoot_guide.htm_9725">OK</STRONG>.</P>
+									<P id="Troubleshoot_guide.htm_9760">4. Click <STRONG id="Troubleshoot_guide.htm_9772">OK</STRONG> again.</P>
+									<P id="Troubleshoot_guide.htm_9813">If you need further assistance with your proxy server settings, contact your 
+										network administrator.</P>
+								</td>
+							</TR>
+						</TABLE>
+						&nbsp;<p id="Troubleshoot_guide.htm_9990">&nbsp;<b id="Troubleshoot_guide.htm_9999"><li id="Troubleshoot_guide.htm_10002"></b><h4 id="Troubleshoot_guide.htm_10010">Other Errors</h4>
+						<TABLE id="Table7" style="WIDTH: 752px; HEIGHT: 56px" cellSpacing="1" cellPadding="1" width="752"
+							border="1">
+							<TR id="Troubleshoot_guide.htm_10165">
+								<TD vAlign="top" id="Troubleshoot_guide.htm_10179">
+									<b id="Troubleshoot_guide.htm_10207">Description:</b><br id="Troubleshoot_guide.htm_10226">
+									The BITS Service does not run in:
+									<ul id="Troubleshoot_guide.htm_10285">
+									<li id="Troubleshoot_guide.htm_10300">safe-boot mode.</li>
+									<li id="Troubleshoot_guide.htm_10335">on Windows 2000 from a remote desktop connection.</li>
+									<li id="Troubleshoot_guide.htm_10404">when setup is installed via a &quot;run as&quot; command.</li>
+									</ul>
+									<P id="Troubleshoot_guide.htm_10497"><B id="Troubleshoot_guide.htm_10500">To correct this error:</B><br id="Troubleshoot_guide.htm_10529">
+									There is no workaround.&nbsp; These scenarios are not supported.</P>
+								</TD>
+							</TR>
+						</TABLE>
+						<P id="Troubleshoot_guide.htm_10665"></P>
+			</SPAN></LI></UL>
+		</div>
+	</body>
+</html>
