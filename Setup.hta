@@ -1,0 +1,347 @@
+<HTML>
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<TITLE>Visual Studio 2008 Express Editions Setup</title>
+
+<STYLE type="text/css">
+    
+A:link
+{
+	text-decoration: none;
+    color: #FFFFFF;
+}
+
+A:visited
+{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+A:hover
+{
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+A:active
+{
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+BODY	
+{
+    background-color: #000000;
+    background-image: url(include/page_background.png);
+    background-repeat: no-repeat;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+	
+DIV
+{
+}
+
+HR
+{
+    width: 100%;
+    height: 1px;
+    color: #FFFFFF;
+    margin-top: 5px;
+}
+	
+TD
+{
+}
+
+IMG 
+{
+	border: 0px;
+}
+
+#LocVSExpressLogo   
+{
+	top: 10px;
+	left: 10px;
+	position: relative;
+}
+
+#LayoutBlockMain
+{
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 8px;
+}
+
+#LayoutBlockTeaser
+{
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-right: 8px;
+}
+
+.TextNormal
+{
+	font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+	font-size: 9.25pt;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #FFFFFF;
+}
+
+.TextHeader1
+{
+	font-family: Segoe Semibold, Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+	font-size: 12.5pt;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #FF7C00;
+}
+
+.TextHeader2
+{
+	font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+	font-size: 11pt;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #FF7C00;
+}
+
+.TextTeaser 
+{
+	display: none;
+}
+
+.TextBold
+{
+	font-weight: bold;
+}
+
+.TextUnderline
+{
+	text-decoration: underline;
+}
+
+.TextCommand
+{
+	font-family: Verdana, Segoe UI, Segoe, Tahoma, Arial, Helvetica;
+	font-size: 9pt;
+	font-weight: bold;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #FFFFFF;
+}
+
+.IconLinkArrow  
+{
+	margin-right: 10px
+}
+
+</STYLE>
+
+<HTA:APPLICATION 
+APPLICATIONNAME = "Visual Studio 2008 Express Editions Setup"
+SINGLEINSTANCE = "yes"
+ICON = "include/devenv.ico" 
+SCROLL = "no"
+MAXIMIZEBUTTON = "no"
+NAVIGABLE = "no"
+SELECTION = "no"
+CONTEXTMENU = "no"
+BORDER = "thin"
+INNERBORDER = "no"
+></HTA:APPLICATION>
+
+<SCRIPT FOR="window" EVENT="onload">
+
+onerror=handleLaunchErr;
+initialize();
+
+</SCRIPT>
+
+<SCRIPT>
+
+// Event handler for window.onload()
+function initialize()   {
+    initWindow();
+    initImages();
+    document.body.style.visibility = "visible";
+}
+
+// Applies initial state settings for the application
+function initWindow()   {
+    // delay the call and avoid 'Access denied' exception
+    setTimeout(setSize1, 0);
+}
+
+function setSize1(){
+    setWindowSize(725, 585);
+}
+
+function setSize2(){
+    setWindowSize(725, document.body.scrollHeight + 25);
+}
+
+// Preloads images with a hoverSrc property into an array to improve response time
+function initImages()    {
+    document.imageArray = new Array();
+
+    if(! document.imageArray)   {
+        document.imageArray = new Array();
+    }
+    
+    for(image in document.images)   {
+        if(document.getElementById(image.toString()))   {
+            image = document.getElementById(image.toString());
+            
+            if(image.hoverSrc != undefined)  {
+                var img = new Image;
+                img.src = image.hoverSrc;
+                document.imageArray.push(img);
+            }
+        }
+        
+    }
+    
+    // Initialize all images and related elements to their default "normal" state
+    resetHoverEffects();
+
+    // delay the call and avoid 'Access denied' exception
+    setTimeout(setSize2, 0);
+}
+
+// Opens a new window
+function popWindow(url, name)
+{
+	// New window will be used to popup window if we haven't opened a readme before;
+	// Otherwise the same window will open again, only toolbar visible, resizable 
+	var wndPopup = window.open(url,name,"");
+	// Bring new window to foreground
+	if(wndPopup) wndPopup.focus();
+}
+
+// Resizes the current window
+function setWindowSize(width, height){
+    window.resizeTo(width, height);
+}
+
+function showHoverEffects(id)   {
+    // Hide everything
+    resetHoverEffects();
+    
+    // Swap in hover image
+    var image = document.getElementById(id);
+    if(image.hoverSrc != undefined)    {
+        image.src = image.hoverSrc;
+    }
+    
+    // Show related elements
+    if(image.objectRef != undefined)    {
+        var teaser = document.getElementById(image.objectRef);
+        if(teaser) teaser.style.display = "inline";
+    }
+}
+
+function resetHoverEffects()   {
+    for(image in document.images)   {
+        if(document.getElementById(image.toString()))   {
+            image = document.getElementById(image.toString());
+            
+            // Reset each image state to normal
+            if(image.normalSrc != undefined)  {
+                image.src = image.normalSrc;
+            }
+
+            // Hide the related elements for each image
+            if(image.objectRef != undefined)    {
+                document.getElementById(image.objectRef).style.display = "none";
+            }
+        }
+    }
+}
+
+function launch(program){
+(new ActiveXObject('WScript.Shell')).Run(program);void(0);
+}
+
+function handleLaunchErr(msg,url,l)
+{
+    alert(msg);
+    return true;
+}
+
+// Immediate execution
+//
+
+</SCRIPT>
+ 
+</HEAD>
+
+<BODY bgcolor="#000000" onload="initImages();">
+
+<!-- MASTER LAYOUT CONTAINER -->
+<TABLE border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+<TR height="100%">
+<TD width="180" align="left" valign="top" nowrap="nowrap"><IMG id="Loc_VSExpressLogo" src="include/vsexpress_logo.gif" width="150" height="80" border="0" /></td>
+<TD width="510" align="left" valign="top" id="LayoutBlockMain">
+<DIV class="TextHeader1" id="Loc_IntroHeader" style="margin-bottom: 2px;">Welcome to Visual Studio 2008 Express Editions Setup</DIV>
+<DIV class="TextNormal" id="Loc_IntroContent1">Lightweight, easy-to-use and easy-to-learn tools for the hobbyist, novice and student developer.<BR /><BR /></DIV>
+<DIV class="TextNormal" id="Loc_IntroContent2">Choose a product to begin setup. If prompted, click the <SPAN class="TextBold" id="Loc_IntroContent2_Run">Run</SPAN> or <SPAN class="TextBold" id="Loc_IntroContent2_Open">Open</SPAN> command for any download or security warning dialog that appears.<BR /><BR /></DIV>
+<DIV class="TextNormal" id="Loc_IntroContent3">Please allow setup to finish completely before beginning another product installation.</DIV>
+</TD>
+</TR>
+<TR height="325">
+<TD width="180" align="left" valign="top" id="LayoutBlockTeaser">
+<!-- VCS -->
+<SPAN id="VCSTeaser" class="TextTeaser">
+<DIV class="TextHeader1" id="Loc_VCSProductLine1">Visual C# 2008</DIV>
+<DIV class="TextHeader2" id="Loc_VCSProductLine2">Express Edition</DIV><BR />
+<DIV class="TextNormal" id="Loc_VCSProductTeaser">A great combination of power and productivity for the Windows&reg; developer.</DIV>
+</SPAN>
+
+<!-- VB -->
+<SPAN id="VBTeaser" class="TextTeaser">
+<DIV class="TextHeader1" id="Loc_VBProductLine1">Visual Basic 2008</DIV>
+<DIV class="TextHeader2" id="Loc_VBProductLine2">Express Edition</DIV><BR />
+<DIV class="TextNormal" id="Loc_VBProductTeaser">Productivity that's ideal for first-time or casual Windows&reg; programming.</DIV>
+</SPAN>
+
+<!-- VC -->
+<SPAN id="VCTeaser" class="TextTeaser">
+<DIV class="TextHeader1" id="Loc_VCProductLine1">Visual C++ 2008</DIV>
+<DIV class="TextHeader2" id="Loc_VCProductLine2">Express Edition</DIV><BR />
+<DIV class="TextNormal" id="Loc_VCProductTeaser">Horsepower with a finer degree of control than the other Express Editions.</DIV>
+</SPAN>
+
+<!-- VWD -->
+<SPAN id="VWDTeaser" class="TextTeaser">
+<DIV class="TextHeader1" id="Loc_VWDProductLine1">Visual Web Developer 2008</DIV>
+<DIV class="TextHeader2" id="Loc_VWDProductLine2">Express Edition</DIV><BR />
+<DIV class="TextNormal" id="Loc_VWDProductTeaser">An ideal environment for dynamic web developement.</DIV>
+</SPAN>
+</TD>
+<TD width="510" align="left" valign="top"
+><A href="#" onClick="javascript:launch('vcsExpress\\setup.exe')"><IMG src="include/vcs_install_normal.gif" id="Loc_VCSInstallerLink" width="510" height="83" border="0" onclick="window.focus();" onmouseover="showHoverEffects(this.id);" onmouseout="resetHoverEffects();" normalSrc="include/vcs_install_normal.gif" hoverSrc="include/vcs_install_hover.gif" objectRef="VCSTeaser"
+/></A><BR /><A href="#" onClick="javascript:launch('vbExpress\\setup.exe')"><IMG src="include/vb_install_normal.gif" id="Loc_VBInstallerLink" width="510" height="79" border="0" onclick="window.focus();" onmouseover="showHoverEffects(this.id);" onmouseout="resetHoverEffects();" normalSrc="include/vb_install_normal.gif" hoverSrc="include/vb_install_hover.gif" objectRef="VBTeaser"
+/></A><BR /><A href="#" onClick="javascript:launch('vcExpress\\setup.exe')"><IMG src="include/vc_install_normal.gif" id="Loc_VCInstallerLink" width="510" height="79" border="0" onclick="window.focus();" onmouseover="showHoverEffects(this.id);" onmouseout="resetHoverEffects();" normalSrc="include/vc_install_normal.gif" hoverSrc="include/vc_install_hover.gif" objectRef="VCTeaser"
+/></A><BR /><A href="#" onClick="javascript:launch('vwdExpress\\setup.exe')"><IMG src="include/vwd_install_normal.gif" id="Loc_VWDInstallerLink" width="510" height="84" border="0" onclick="window.focus();" onmouseover="showHoverEffects(this.id);" onmouseout="resetHoverEffects();" normalSrc="include/vwd_install_normal.gif" hoverSrc="include/vwd_install_hover.gif" objectRef="VWDTeaser"
+/></A></TD>
+</TR>
+<TR height="25">
+<TD align="left">
+<A id="Loc_ReadmeLink" class="TextCommand" href="#" onclick="window.focus(); popWindow('VBExpress\\readme.htm', 'wndReadme');">View Readme file</A>
+</TD>
+<TD align="right">
+<A id="Loc_WebsiteLink" class="TextCommand" href="http://go.microsoft.com/fwlink/?LinkID=93227" target="_blank" onclick="window.focus();">Visit the Visual Studio Express Web site to learn more<IMG src="include/icon_linkarrow.gif" class="IconLinkArrow" border="0" width="15" height="15" align="absbottom" /></A>
+</TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,4 @@
+[autorun]
+shellexecute=setup.hta 
+Icon=include/devenv.ico 
+
